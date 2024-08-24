@@ -1,24 +1,57 @@
+:root {
+    --bg-color: #f5f7fa;
+    --text-color: #333;
+    --header-bg: #3498db;
+    --header-text: #fff;
+    --section-bg: #fff;
+    --border-color: #e0e0e0;
+    --highlight-color: #3498db;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #f0f0f0;
+        --header-bg: #2980b9;
+        --header-text: #fff;
+        --section-bg: #2c2c2c;
+        --border-color: #444;
+        --highlight-color: #3498db;
+    }
+}
+
+.dark-mode {
+    --bg-color: #121212; /* Darker background for more contrast */
+    --text-color: #E0E0E0; /* Light grey text for better readability */
+    --header-bg: #0A84FF; /* Vibrant blue for the header */
+    --header-text: #FFFFFF; /* Pure white for header texts */
+    --section-bg: #1E1E1E; /* Slightly lighter than the background for depth */
+    --border-color: #333333; /* Subtle borders to define sections without stark contrast */
+    --highlight-color: #4CAF50; /* A vibrant green for links and icons to stand out */
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--text-color);
+    background-color: var(--bg-color);
     margin: 0;
     padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
     max-width: 900px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: var(--section-bg);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
 }
 
 header {
-    background-color: #3498db;
-    color: #fff;
+    background-color: var(--header-bg);
+    color: var(--header-text);
     text-align: center;
     padding: 40px 20px;
 }
@@ -51,11 +84,20 @@ h1 {
 
 section {
     padding: 30px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+a {
+    color: var(--highlight-color);
+    text-decoration: none; /* Removes underline to keep it clean */
+}
+
+a:hover {
+    text-decoration: underline; /* Adds underline on hover for a clear indication of links */
 }
 
 h2 {
-    color: #2c3e50;
+    color: var(--highlight-color);
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -63,7 +105,6 @@ h2 {
 
 h2 svg {
     margin-right: 10px;
-    color: #3498db;
 }
 
 .two-column-list {
@@ -80,7 +121,7 @@ h2 svg {
 
 .two-column-list svg {
     margin-right: 10px;
-    color: #3498db;
+    color: var(--highlight-color);
 }
 
 .skills-grid {
@@ -90,7 +131,7 @@ h2 svg {
 }
 
 .skill-category h3 {
-    color: #3498db;
+    color: var(--highlight-color);
     margin-bottom: 10px;
 }
 
@@ -100,18 +141,19 @@ h2 svg {
 
 .job-title {
     font-weight: bold;
-    color: #2c3e50;
+    color: var(--text-color);
     margin-bottom: 5px;
 }
 
 .job-company {
     font-weight: bold;
-    color: #3498db;
+    color: var(--highlight-color);
 }
 
 .job-date {
     font-style: italic;
-    color: #7f8c8d;
+    color: var(--text-color);
+    opacity: 0.7;
     margin-bottom: 10px;
 }
 
@@ -121,8 +163,27 @@ ul {
 
 .technologies {
     font-size: 0.9em;
-    color: #7f8c8d;
+    color: var(--text-color);
+    opacity: 0.7;
     margin-top: 10px;
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--section-bg);
+    color: var(--text-color);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background-color: var(--highlight-color);
+    color: #000; /* Dark text on a light background for the button */
 }
 
 @media (max-width: 600px) {
@@ -132,13 +193,5 @@ ul {
 
     .skills-grid {
         grid-template-columns: 1fr;
-    }
-
-    .contact-info {
-        flex-direction: column;
-    }
-
-    .contact-info p {
-        margin: 5px 0;
     }
 }
