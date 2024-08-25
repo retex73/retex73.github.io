@@ -1,152 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Peter Williams - Senior JavaScript Developer & Technical Lead</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://unpkg.com/feather-icons"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- animate on scroll library  -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-</head>
-<body>
+    <!-- gsap animation library  -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  </head>
+  <body>
     <button class="dark-mode-toggle" aria-label="Toggle dark mode">
-        <i data-feather="moon"></i>
+      <i data-feather="moon"></i>
     </button>
 
     <div class="container">
-        <header data-aos="fade-down" data-aos-duration="1000">
-            <h1>Peter Williams</h1>
-            <p class="subtitle">Senior JavaScript Developer & Technical Lead</p>
-            <div class="contact-info">
-                <p><i data-feather="mail"></i> retex.williams@gmail.com</p>
-                <p><i data-feather="phone"></i> 07957 791854</p>
-                <p><i data-feather="map-pin"></i> Manchester, UK</p>
-            </div>
-        </header>
+      <header data-aos="fade-down" data-aos-duration="1000">
+        <h1>Peter Williams</h1>
+        <p class="subtitle">Senior JavaScript Developer & Technical Lead</p>
+        <div class="contact-info">
+          <p>
+            <i data-feather="mail"></i>
+            <a href="mailto:retex.williams@gmail.com" id="email-link"
+              >retex.williams@gmail.com</a
+            >
+          </p>
 
-        <section id="professional-summary" data-aos="fade-up" data-aos-duration="800">
-            <h2><i data-feather="user"></i> Professional Summary</h2>
-            <p>Accomplished Senior JavaScript Developer and Technical Lead with over 15 years of expertise in architecting and deploying scalable web applications across diverse industries. Demonstrated success in leading high-performing development teams, driving digital transformation initiatives, and optimizing performance for mission-critical systems.</p>
-        </section>
+          <p>
+            <i data-feather="phone"></i>
+            <a href="tel:07957791854" id="phone-link">07957 791854</a>
+          </p>
 
-        <section id="core-competencies" data-aos="fade-up" data-aos-duration="800">
-            <h2><i data-feather="star"></i> Core Competencies</h2>
-            <ul class="two-column-list">
-                <li data-aos="fade-right" data-aos-delay="100"><i data-feather="check"></i> Full-Stack Development</li>
-                <li data-aos="fade-right" data-aos-delay="200"><i data-feather="check"></i> Technical Leadership</li>
-                <li data-aos="fade-right" data-aos-delay="300"><i data-feather="check"></i> Cloud Architecture (AWS)</li>
-                <li data-aos="fade-right" data-aos-delay="400"><i data-feather="check"></i> Agile Methodologies</li>
-                <li data-aos="fade-right" data-aos-delay="500"><i data-feather="check"></i> Performance Optimization</li>
-                <li data-aos="fade-right" data-aos-delay="600"><i data-feather="check"></i> Test-Driven Development</li>
-            </ul>
-        </section>
+          <p><i data-feather="map-pin"></i> Manchester, UK</p>
+        </div>
+      </header>
 
-        <section id="technical-skills" data-aos="fade-up" data-aos-duration="800">
-            <h2><i data-feather="code"></i> Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category" data-aos="zoom-in" data-aos-delay="100">
-                    <h3>Languages</h3>
-                    <p>JavaScript (ES6+), TypeScript, Python, PHP</p>
-                </div>
-                <div class="skill-category" data-aos="zoom-in" data-aos-delay="200">
-                    <h3>Front-end</h3>
-                    <p>React, Angular, Vue.js, HTML5, CSS3 (SASS/LESS)</p>
-                </div>
-                <div class="skill-category" data-aos="zoom-in" data-aos-delay="300">
-                    <h3>Back-end</h3>
-                    <p>Node.js, Express, PHP (Laravel, Zend)</p>
-                </div>
-                <div class="skill-category" data-aos="zoom-in" data-aos-delay="400">
-                    <h3>Databases</h3>
-                    <p>MongoDB, MySQL, PostgreSQL, DynamoDB</p>
-                </div>
-                <div class="skill-category" data-aos="zoom-in" data-aos-delay="500">
-                    <h3>Cloud & DevOps</h3>
-                    <p>AWS (Cognito, Amplify, Lambda), Docker, Jenkins, GitLab CI/CD</p>
-                </div>
-                <div class="skill-category" data-aos="zoom-in" data-aos-delay="600">
-                    <h3>Testing</h3>
-                    <p>Jest, Jasmine, Cypress, Selenium</p>
-                </div>
-            </div>
-        </section>
+      <section
+        id="professional-summary"
+        data-aos="fade-up"
+        data-aos-duration="800"
+      >
+        <h2><i data-feather="user"></i> Professional Summary</h2>
+        <p>
+          Accomplished Senior JavaScript Developer and Technical Lead with over
+          15 years of expertise in architecting and deploying scalable web
+          applications across diverse industries. Demonstrated success in
+          leading high-performing development teams, driving digital
+          transformation initiatives, and optimizing performance for
+          mission-critical systems.
+        </p>
+      </section>
 
-        <section id="professional-experience" data-aos="fade-up" data-aos-duration="800">
-            <h2><i data-feather="briefcase"></i> Professional Experience</h2>
-            <div class="job" data-aos="fade-left" data-aos-delay="100">
-                <h3 class="job-title">JavaScript Technical Lead</h3>
-                <p class="job-company">Cintra</p>
-                <p class="job-date">September 2022 - Present</p>
-                <ul>
-                    <li>Architected a comprehensive cloud migration solution using React, Node.js, and AWS services (Cognito, Amplify, DynamoDB), resulting in a seamless transition of legacy databases to the cloud.</li>
-                    <li>Mentored a team of 5 developers, instituting code reviews and pair programming practices that reduced the bug rate by 30%.</li>
-                    <li>Collaborated with stakeholders to prioritize features, ensuring all project milestones were met on time and within scope.</li>
-                </ul>
-                <p class="technologies">Technologies: React, Node.js, AWS (Cognito, Amplify, DynamoDB), Java</p>
-            </div>
-            <div class="job" data-aos="fade-left" data-aos-delay="200">
-                <h3 class="job-title">Senior JavaScript Engineer</h3>
-                <p class="job-company">Booking.com</p>
-                <p class="job-date">September 2021 - September 2022</p>
-                <ul>
-                    <li>Engineered a high-performance React-based interface for financial data corrections, boosting user efficiency by 40%.</li>
-                    <li>Led the migration of legacy PHP endpoints to modern, cloud-based Node.js microservices, reducing system response times by 50%.</li>
-                    <li>Enhanced security through the implementation of JWT authentication and AWS secrets management, significantly fortifying the application.</li>
-                </ul>
-                <p class="technologies">Technologies: React, Node.js, TypeScript, PHP, AWS, GitLab CI/CD</p>
-            </div>
-        </section>
+      <section
+        id="core-competencies"
+        data-aos="fade-up"
+        data-aos-duration="800"
+      >
+        <h2><i data-feather="star"></i> Core Competencies</h2>
+        <ul class="two-column-list">
+          <li data-aos="fade-right" data-aos-delay="100">
+            <i data-feather="check"></i> Full-Stack Development
+          </li>
+          <li data-aos="fade-right" data-aos-delay="200">
+            <i data-feather="check"></i> Technical Leadership
+          </li>
+          <li data-aos="fade-right" data-aos-delay="300">
+            <i data-feather="check"></i> Cloud Architecture (AWS)
+          </li>
+          <li data-aos="fade-right" data-aos-delay="400">
+            <i data-feather="check"></i> Agile Methodologies
+          </li>
+          <li data-aos="fade-right" data-aos-delay="500">
+            <i data-feather="check"></i> Performance Optimization
+          </li>
+          <li data-aos="fade-right" data-aos-delay="600">
+            <i data-feather="check"></i> Test-Driven Development
+          </li>
+        </ul>
+      </section>
 
-        <section id="certifications" data-aos="fade-up" data-aos-duration="800">
-            <h2><i data-feather="award"></i> Certifications</h2>
-            <ul>
-                <li data-aos="fade-right" data-aos-delay="100">AWS Certified Developer – Associate</li>
-                <li data-aos="fade-right" data-aos-delay="200">MongoDB Certified Developer</li>
-            </ul>
-        </section>
+      <section id="technical-skills" data-aos="fade-up" data-aos-duration="800">
+        <h2><i data-feather="code"></i> Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category" data-aos="zoom-in" data-aos-delay="100">
+            <h3>Languages</h3>
+            <p>JavaScript (ES6+), TypeScript, Python, PHP</p>
+          </div>
+          <div class="skill-category" data-aos="zoom-in" data-aos-delay="200">
+            <h3>Front-end</h3>
+            <p>React, Angular, Vue.js, HTML5, CSS3 (SASS/LESS)</p>
+          </div>
+          <div class="skill-category" data-aos="zoom-in" data-aos-delay="300">
+            <h3>Back-end</h3>
+            <p>Node.js, Express, PHP (Laravel, Zend)</p>
+          </div>
+          <div class="skill-category" data-aos="zoom-in" data-aos-delay="400">
+            <h3>Databases</h3>
+            <p>MongoDB, MySQL, PostgreSQL, DynamoDB</p>
+          </div>
+          <div class="skill-category" data-aos="zoom-in" data-aos-delay="500">
+            <h3>Cloud & DevOps</h3>
+            <p>AWS (Cognito, Amplify, Lambda), Docker, Jenkins, GitLab CI/CD</p>
+          </div>
+          <div class="skill-category" data-aos="zoom-in" data-aos-delay="600">
+            <h3>Testing</h3>
+            <p>Jest, Jasmine, Cypress, Selenium</p>
+          </div>
+        </div>
+      </section>
 
-        <section id="personal-projects" data-aos="fade-up" data-aos-duration="800">
-            <h2><i data-feather="code"></i> Personal Projects</h2>
-            <h3>AI-Powered Alexa Skill for Healthcare Accessibility</h3>
-            <ul>
-                <li data-aos="fade-right" data-aos-delay="100">Developed an Alexa skill to assist elderly and disabled individuals in booking medical appointments and accessing various services.</li>
-                <li data-aos="fade-right" data-aos-delay="200">Technologies used: Node.js, AWS Lambda, OpenAI API</li>
-            </ul>
-        </section>
+      <section
+        id="professional-experience"
+        data-aos="fade-up"
+        data-aos-duration="800"
+      >
+        <h2><i data-feather="briefcase"></i> Professional Experience</h2>
+        <div class="job" data-aos="fade-left" data-aos-delay="100">
+          <h3 class="job-title">JavaScript Technical Lead</h3>
+          <p class="job-company">Cintra</p>
+          <p class="job-date">September 2022 - Present</p>
+          <ul>
+            <li>
+              Architected a comprehensive cloud migration solution using React,
+              Node.js, and AWS services (Cognito, Amplify, DynamoDB), resulting
+              in a seamless transition of legacy databases to the cloud.
+            </li>
+            <li>
+              Mentored a team of 5 developers, instituting code reviews and pair
+              programming practices that reduced the bug rate by 30%.
+            </li>
+            <li>
+              Collaborated with stakeholders to prioritize features, ensuring
+              all project milestones were met on time and within scope.
+            </li>
+          </ul>
+          <p class="technologies">
+            Technologies: React, Node.js, AWS (Cognito, Amplify, DynamoDB), Java
+          </p>
+        </div>
+        <div class="job" data-aos="fade-left" data-aos-delay="200">
+          <h3 class="job-title">Senior JavaScript Engineer</h3>
+          <p class="job-company">Booking.com</p>
+          <p class="job-date">September 2021 - September 2022</p>
+          <ul>
+            <li>
+              Engineered a high-performance React-based interface for financial
+              data corrections, boosting user efficiency by 40%.
+            </li>
+            <li>
+              Led the migration of legacy PHP endpoints to modern, cloud-based
+              Node.js microservices, reducing system response times by 50%.
+            </li>
+            <li>
+              Enhanced security through the implementation of JWT authentication
+              and AWS secrets management, significantly fortifying the
+              application.
+            </li>
+          </ul>
+          <p class="technologies">
+            Technologies: React, Node.js, TypeScript, PHP, AWS, GitLab CI/CD
+          </p>
+        </div>
+      </section>
 
-        <section id="professional-development" data-aos="fade-up" data-aos-duration="800">
-            <h2><i data-feather="book"></i> Professional Development</h2>
-            <ul>
-                <li data-aos="fade-right" data-aos-delay="100">Regularly attend tech conferences and workshops to stay current with emerging technologies and best practices.</li>
-                <li data-aos="fade-right" data-aos-delay="200">Active participant in local JavaScript and web development meetups.</li>
-                <li data-aos="fade-right" data-aos-delay="300">Contribute to and maintain several open-source JavaScript libraries.</li>
-            </ul>
-        </section>
+      <section id="certifications" data-aos="fade-up" data-aos-duration="800">
+        <h2><i data-feather="award"></i> Certifications</h2>
+        <ul>
+          <li data-aos="fade-right" data-aos-delay="100">
+            AWS Certified Developer – Associate
+          </li>
+          <li data-aos="fade-right" data-aos-delay="200">
+            MongoDB Certified Developer
+          </li>
+        </ul>
+      </section>
+
+      <section
+        id="personal-projects"
+        data-aos="fade-up"
+        data-aos-duration="800"
+      >
+        <h2><i data-feather="code"></i> Personal Projects</h2>
+        <h3>AI-Powered Alexa Skill for Healthcare Accessibility</h3>
+        <ul>
+          <li data-aos="fade-right" data-aos-delay="100">
+            Developed an Alexa skill to assist elderly and disabled individuals
+            in booking medical appointments and accessing various services.
+          </li>
+          <li data-aos="fade-right" data-aos-delay="200">
+            Technologies used: Node.js, AWS Lambda, OpenAI API
+          </li>
+        </ul>
+      </section>
+
+      <section
+        id="professional-development"
+        data-aos="fade-up"
+        data-aos-duration="800"
+      >
+        <h2><i data-feather="book"></i> Professional Development</h2>
+        <ul>
+          <li data-aos="fade-right" data-aos-delay="100">
+            Regularly attend tech conferences and workshops to stay current with
+            emerging technologies and best practices.
+          </li>
+          <li data-aos="fade-right" data-aos-delay="200">
+            Active participant in local JavaScript and web development meetups.
+          </li>
+          <li data-aos="fade-right" data-aos-delay="300">
+            Contribute to and maintain several open-source JavaScript libraries.
+          </li>
+        </ul>
+      </section>
     </div>
 
     <script>
-      feather.replace()
+      feather.replace();
       AOS.init({
         duration: 1000,
         once: true,
-        offset: 100
+        offset: 100,
       });
 
       // Dark mode functionality
-      const darkModeToggle = document.querySelector('.dark-mode-toggle');
-      const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+      const darkModeToggle = document.querySelector(".dark-mode-toggle");
+      const prefersDarkScheme = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      );
 
       function toggleDarkMode(state) {
-        document.body.classList.toggle('dark-mode', state);
-        darkModeToggle.innerHTML = state ? '<i data-feather="sun"></i>' : '<i data-feather="moon"></i>';
+        document.body.classList.toggle("dark-mode", state);
+        darkModeToggle.innerHTML = state
+          ? '<i data-feather="sun"></i>'
+          : '<i data-feather="moon"></i>';
         feather.replace();
-        localStorage.setItem('darkMode', state);
+        localStorage.setItem("darkMode", state);
       }
 
       // Check for saved user preference, if any, on load
-      const darkModeState = localStorage.getItem('darkMode');
+      const darkModeState = localStorage.getItem("darkMode");
       if (darkModeState !== null) {
         toggleDarkMode(JSON.parse(darkModeState));
       } else {
@@ -154,12 +253,97 @@
       }
 
       // Listen for changes to the prefers-color-scheme media query
-      prefersDarkScheme.addListener((mediaQuery) => toggleDarkMode(mediaQuery.matches));
+      prefersDarkScheme.addListener((mediaQuery) =>
+        toggleDarkMode(mediaQuery.matches)
+      );
 
       // Listen for clicks on the toggle
-      darkModeToggle.addEventListener('click', () => {
-        toggleDarkMode(!document.body.classList.contains('dark-mode'));
+      darkModeToggle.addEventListener("click", () => {
+        toggleDarkMode(!document.body.classList.contains("dark-mode"));
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const emailLink = document.getElementById("email-link");
+        const phoneLink = document.getElementById("phone-link");
+
+        if (emailLink) {
+          emailLink.addEventListener("click", function (event) {
+            event.preventDefault();
+            const email = this.getAttribute("href").replace("mailto:", "");
+            navigator.clipboard.writeText(email);
+
+            const originalText = this.textContent;
+            this.textContent = "Email Copied!";
+            gsap.fromTo(
+              this,
+              { opacity: 0, y: -20 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.5,
+                onComplete: () => {
+                  setTimeout(() => {
+                    gsap.to(this, {
+                      opacity: 0,
+                      y: 20,
+                      duration: 0.5,
+                      onComplete: () => {
+                        this.textContent = originalText;
+                        gsap.fromTo(
+                          this,
+                          { opacity: 0, y: -20 },
+                          { opacity: 1, y: 0, duration: 0.5 }
+                        );
+                      },
+                    });
+                  }, 2000);
+                },
+              }
+            );
+          });
+        }
+
+        if (phoneLink) {
+          phoneLink.addEventListener("click", function (event) {
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+              return; // Proceed with normal behavior on mobile devices
+            } else {
+              event.preventDefault();
+              const phoneNumber = this.textContent;
+              navigator.clipboard.writeText(phoneNumber);
+
+              const originalText = this.textContent;
+              this.textContent = "Telephone Number Copied!";
+              gsap.fromTo(
+                this,
+                { opacity: 0, y: -20 },
+                {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.5,
+                  onComplete: () => {
+                    setTimeout(() => {
+                      gsap.to(this, {
+                        opacity: 0,
+                        y: 20,
+                        duration: 0.5,
+                        onComplete: () => {
+                          this.textContent = originalText;
+                          gsap.fromTo(
+                            this,
+                            { opacity: 0, y: -20 },
+                            { opacity: 1, y: 0, duration: 0.5 }
+                          );
+                        },
+                      });
+                    }, 2000);
+                  },
+                }
+              );
+            }
+          });
+        }
       });
     </script>
-</body>
+  </body>
 </html>
