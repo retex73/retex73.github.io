@@ -21,13 +21,13 @@
 }
 
 .dark-mode {
-    --bg-color: #121212; /* Darker background for more contrast */
-    --text-color: #E0E0E0; /* Light grey text for better readability */
-    --header-bg: #0A84FF; /* Vibrant blue for the header */
-    --header-text: #FFFFFF; /* Pure white for header texts */
-    --section-bg: #1E1E1E; /* Slightly lighter than the background for depth */
-    --border-color: #333333; /* Subtle borders to define sections without stark contrast */
-    --highlight-color: #4CAF50; /* A vibrant green for links and icons to stand out */
+    --bg-color: #121212;
+    --text-color: #E0E0E0;
+    --header-bg: #0A84FF;
+    --header-text: #FFFFFF;
+    --section-bg: #1E1E1E;
+    --border-color: #333333;
+    --highlight-color: #4CAF50;
 }
 
 body {
@@ -87,15 +87,6 @@ section {
     border-bottom: 1px solid var(--border-color);
 }
 
-a {
-    color: var(--header-text);
-    text-decoration: none;
-
-
-a:hover {
-    text-decoration: underline; /* Adds underline on hover for a clear indication of links */
-}
-
 h2 {
     color: var(--highlight-color);
     display: flex;
@@ -122,6 +113,24 @@ h2 svg {
 .two-column-list svg {
     margin-right: 10px;
     color: var(--highlight-color);
+}
+
+#core-competencies ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+#core-competencies li {
+    display: flex;
+    align-items: center;
+}
+
+#core-competencies li::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
 }
 
 .skills-grid {
@@ -157,10 +166,6 @@ h2 svg {
     margin-bottom: 10px;
 }
 
-ul {
-    padding-left: 20px;
-}
-
 .technologies {
     font-size: 0.9em;
     color: var(--text-color);
@@ -183,9 +188,43 @@ ul {
 
 .dark-mode-toggle:hover {
     background-color: var(--highlight-color);
-    color: #000; /* Dark text on a light background for the button */
+    color: #000;
 }
 
+/* Links */
+a {
+    color: var(--header-text);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Email and phone link styles */
+#email-link {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+#email-link:hover,
+#email-link:focus {
+    transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#phone-link {
+    transition: color 0.3s, text-shadow 0.3s;
+    cursor: pointer;
+}
+
+#phone-link:hover,
+#phone-link:focus {
+    color: var(--highlight-color);
+    text-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+}
+
+/* Media query for smaller screens */
 @media (max-width: 600px) {
     .two-column-list {
         column-count: 1;
@@ -194,49 +233,4 @@ ul {
     .skills-grid {
         grid-template-columns: 1fr;
     }
-}
-
-/* email link  */
-#email-link {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    cursor: pointer;
-  }
-
-  #email-link:hover, #email-link:focus {
-    transform: scale(1.05); /* Slightly enlarges the link */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
-  }
-
-  #phone-link {
-    transition: color 0.3s, text-shadow 0.3s;
-    cursor: pointer;
-  }
-
-  #phone-link:hover, #phone-link:focus {
-    color: var(--highlight-color);
-    text-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
-  }
-
-}
-
-#core-competencies ul {
-    list-style-type: none;
-    padding-left: 20px;
-
-}
-
-#core-competencies li {
-    display: flex;
-    align-items: center;
-}
-
-#core-competencies li::before {
-    content: "";
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    margin-right: 0.5em;
-    /* background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>'); */
-    background-repeat: no-repeat;
-    background-size: contain;
 }
