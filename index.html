@@ -4,56 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peter Williams - Senior JavaScript Developer & Technical Lead</title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <header>
+        <header data-aos="fade-down" data-aos-duration="1000">
             <h1>Peter Williams</h1>
             <p class="subtitle">Senior JavaScript Developer & Technical Lead</p>
+            <div class="contact-info">
+                <a href="mailto:retex.williams@gmail.com" id="email-link">retex.williams@gmail.com</a>
+                <a href="tel:07957791854" id="phone-link">07957 791854</a>
+                <p>Manchester, UK</p>
+            </div>
+            <button class="download-resume-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download Resume
+            </button>
         </header>
 
-        <div class="contact-info">
-            <p>📧 retex.williams@gmail.com | 📱 07957 791854</p>
-            <p>📍 Manchester, UK</p>
-        </div>
-
-        <section>
+        <section id="professional-summary" class="section" data-aos="fade-up" data-aos-duration="800">
             <h2>Professional Summary</h2>
-            <p>Accomplished Senior JavaScript Developer and Technical Lead with over 15 years of expertise in architecting and deploying scalable web applications across diverse industries. Demonstrated success in leading high-performing development teams, driving digital transformation initiatives, and optimizing performance for mission-critical systems. Proficient in full-stack development with a deep focus on modern JavaScript frameworks, cloud architecture, and Agile methodologies. Adept at quickly adapting to emerging technologies and delivering impactful solutions in fast-paced, contract-based environments.</p>
+            <p>Accomplished Senior JavaScript Developer and Technical Lead with over 15 years of expertise in architecting and deploying scalable web applications across diverse industries. Demonstrated success in leading high-performing development teams, driving digital transformation initiatives, and optimizing performance for mission-critical systems.</p>
         </section>
 
-        <section>
+        <section id="core-competencies" class="section" data-aos="fade-up" data-aos-duration="800">
             <h2>Core Competencies</h2>
             <ul>
-                <li><strong>Full-Stack Development:</strong> Mastery in JavaScript (ES6+), Node.js, and modern front-end frameworks (React, Angular, Vue.js)</li>
-                <li><strong>Technical Leadership:</strong> Experienced in leading cross-functional teams, mentoring developers, and driving code quality improvements</li>
-                <li><strong>Cloud Architecture (AWS):</strong> Proficient in designing and implementing cloud-based solutions using AWS services</li>
-                <li><strong>Agile Methodologies:</strong> Skilled in Agile practices, with a track record of delivering projects on time and within budget</li>
-                <li><strong>Performance Optimization:</strong> Expertise in optimizing web applications for speed, scalability, and reliability</li>
-                <li><strong>Test-Driven Development:</strong> Strong advocate for TDD, ensuring robust and maintainable code through continuous testing</li>
+                <li>Full-Stack Development</li>
+                <li>Technical Leadership</li>
+                <li>Cloud Architecture (AWS)</li>
+                <li>Agile Methodologies</li>
+                <li>Performance Optimization</li>
+                <li>Test-Driven Development</li>
             </ul>
         </section>
 
-        <section>
+        <section id="technical-skills" class="section" data-aos="fade-up" data-aos-duration="800">
             <h2>Technical Skills</h2>
-            <ul>
-                <li><strong>Languages:</strong> JavaScript (ES6+), TypeScript, Python, PHP</li>
-                <li><strong>Front-end:</strong> React, Angular, Vue.js, HTML5, CSS3 (SASS/LESS)</li>
-                <li><strong>Back-end:</strong> Node.js, Express, PHP (Laravel, Zend)</li>
-                <li><strong>Databases:</strong> MongoDB, MySQL, PostgreSQL, DynamoDB</li>
-                <li><strong>Cloud & DevOps:</strong> AWS (Cognito, Amplify, Lambda), Docker, Jenkins, GitLab CI/CD</li>
-                <li><strong>Testing:</strong> Jest, Jasmine, Cypress, Selenium</li>
-                <li><strong>Other:</strong> RESTful APIs, GraphQL, WebSockets, Microservices</li>
-            </ul>
+            <div class="skills-grid">
+                <div class="skill-category" data-aos="zoom-in" data-aos-delay="100">
+                    <h3>Languages</h3>
+                    <p>JavaScript, TypeScript, Python, PHP, Flutter / Dart</p>
+                </div>
+                <div class="skill-category" data-aos="zoom-in" data-aos-delay="200">
+                    <h3>Front-end</h3>
+                    <p>React, Angular, Vue.js, HTML5, CSS3 (SASS/LESS)</p>
+                </div>
+                <div class="skill-category" data-aos="zoom-in" data-aos-delay="300">
+                    <h3>Back-end</h3>
+                    <p>Node.js, Express, PHP (Laravel, Zend)</p>
+                </div>
+                <div class="skill-category" data-aos="zoom-in" data-aos-delay="400">
+                    <h3>Databases</h3>
+                    <p>MongoDB, MySQL, PostgreSQL, DynamoDB</p>
+                </div>
+                <div class="skill-category" data-aos="zoom-in" data-aos-delay="500">
+                    <h3>Cloud & DevOps</h3>
+                    <p>AWS (Cognito, Amplify, Lambda), Docker, Jenkins, GitLab CI/CD</p>
+                </div>
+                <div class="skill-category" data-aos="zoom-in" data-aos-delay="600">
+                    <h3>Testing</h3>
+                    <p>Jest, Jasmine, Cypress, Selenium</p>
+                </div>
+            </div>
         </section>
 
-        <section>
+        <section id="professional-experience" class="section" data-aos="fade-up" data-aos-duration="800">
             <h2>Professional Experience</h2>
-            <div class="job">
-                <p><span class="job-title">JavaScript Technical Lead</span> | <span class="job-company">Cintra</span></p>
-                <p class="job-date">September 2022 - Present</p>
-                <p>Led the development of a cloud migration application, showcasing expertise in modern web technologies and team leadership.</p>
+            <div class="job" data-aos="fade-left" data-aos-delay="100">
+                <h3 class="job-title">JavaScript Technical Lead</h3>
+                <p class="job-company">Cintra</p>
+                <p class="job-date">September 2022 - May 2023</p>
                 <ul>
                     <li>Architected a comprehensive cloud migration solution using React, Node.js, and AWS services (Cognito, Amplify, DynamoDB), resulting in a seamless transition of legacy databases to the cloud.</li>
                     <li>Mentored a team of 5 developers, instituting code reviews and pair programming practices that reduced the bug rate by 30%.</li>
@@ -61,11 +88,10 @@
                 </ul>
                 <p class="technologies">Technologies: React, Node.js, AWS (Cognito, Amplify, DynamoDB), Java</p>
             </div>
-
-            <div class="job">
-                <p><span class="job-title">Senior JavaScript Engineer</span> | <span class="job-company">Booking.com</span></p>
+            <div class="job" data-aos="fade-left" data-aos-delay="200">
+                <h3 class="job-title">Senior JavaScript Engineer</h3>
+                <p class="job-company">Booking.com</p>
                 <p class="job-date">September 2021 - September 2022</p>
-                <p>Spearheaded the modernization of financial data management systems, focusing on performance optimization and security enhancements.</p>
                 <ul>
                     <li>Engineered a high-performance React-based interface for financial data corrections, boosting user efficiency by 40%.</li>
                     <li>Led the migration of legacy PHP endpoints to modern, cloud-based Node.js microservices, reducing system response times by 50%.</li>
@@ -73,12 +99,9 @@
                 </ul>
                 <p class="technologies">Technologies: React, Node.js, TypeScript, PHP, AWS, GitLab CI/CD</p>
             </div>
-
-            <!-- Add more job entries here -->
-
         </section>
 
-        <section>
+        <section id="certifications" class="section" data-aos="fade-up" data-aos-duration="800">
             <h2>Certifications</h2>
             <ul>
                 <li>AWS Certified Developer – Associate</li>
@@ -86,7 +109,7 @@
             </ul>
         </section>
 
-        <section>
+        <section id="personal-projects" class="section" data-aos="fade-up" data-aos-duration="800">
             <h2>Personal Projects</h2>
             <h3>AI-Powered Alexa Skill for Healthcare Accessibility</h3>
             <ul>
@@ -95,7 +118,7 @@
             </ul>
         </section>
 
-        <section>
+        <section id="professional-development" class="section" data-aos="fade-up" data-aos-duration="800">
             <h2>Professional Development</h2>
             <ul>
                 <li>Regularly attend tech conferences and workshops to stay current with emerging technologies and best practices.</li>
@@ -103,15 +126,15 @@
                 <li>Contribute to and maintain several open-source JavaScript libraries.</li>
             </ul>
         </section>
-
-        <section>
-            <h2>Interests</h2>
-            <ul>
-                <li><strong>Music:</strong> Classically trained in clarinet and piano; previously organized music workshops for primary schools.</li>
-                <li><strong>Continuous Learning:</strong> Passionate about exploring new technologies and their practical applications in solving real-world problems.</li>
-                <li><strong>Mentoring:</strong> Dedicated to guiding junior developers and sharing knowledge within the tech community.</li>
-            </ul>
-        </section>
     </div>
+
+    <button class="dark-mode-toggle">
+        <i data-feather="moon"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
