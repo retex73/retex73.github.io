@@ -27,7 +27,6 @@ if (darkModeState !== null) {
 }
 
 // Listen for changes to the prefers-color-scheme media query
-
 prefersDarkScheme.addListener((mediaQuery) =>
   toggleDarkMode(mediaQuery.matches)
 );
@@ -112,5 +111,44 @@ document.addEventListener("DOMContentLoaded", function () {
   if (phoneLink) {
     phoneLink.classList.add("phone");
     setupLinkAnimation(phoneLink);
+  }
+
+  // Download resume functionality
+  function downloadResume() {
+    // Create a link to the print CSS
+    const printCSS = document.createElement("link");
+    printCSS.rel = "stylesheet";
+    printCSS.type = "text/css";
+    printCSS.href = "print.css";
+    document.head.appendChild(printCSS);
+
+    // Disable AOS animations
+    const animatedElements = document.querySelectorAll("[data-aos]");
+    animatedElements.forEach((el) => {
+      el.removeAttribute("data-aos");
+      el.classList.add("aos-animate");
+    });
+
+    // Wait for print CSS to load and apply
+    setTimeout(() => {
+      window.print();
+
+      // Remove print CSS
+      document.head.removeChild(printCSS);
+
+      // Re-enable AOS animations
+      animatedElements.forEach((el) => {
+        el.setAttribute("data-aos", el.getAttribute("data-aos-original"));
+        el.classList.remove("aos-animate");
+      });
+
+      // Reinitialize AOS
+      AOS.refresh();
+    }, 500);
+  }
+
+  const downloadButton = document.querySelector(".download-resume-btn");
+  if (downloadButton) {
+    downloadButton.addEventListener("click", downloadResume);
   }
 });

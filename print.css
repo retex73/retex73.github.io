@@ -1,0 +1,145 @@
+@media print {
+    body, header, .contact-info, .contact-info a, .contact-info p {
+        color: #000 !important;
+        opacity: 1 !important;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 12pt;
+        line-height: 1.3;
+        background: none;
+    }
+
+    .container {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    header {
+        background: none;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    header h1 {
+        font-size: 24pt;
+        margin-bottom: 5px;
+        color: #000;
+    }
+
+    header .subtitle {
+        font-size: 14pt;
+        margin-bottom: 15px;
+        color: #000;
+    }
+
+    .contact-info {
+        margin-top: 15px;
+        display: block;
+    }
+
+    .contact-info a,
+    .contact-info p {
+        display: block;
+        margin: 0;
+        padding: 0;
+
+        color: #000 !important;
+        font-size: 12pt;
+        text-decoration: none;
+        margin-right: 20px;
+
+    }
+
+    /* Force each contact info item to its own line */
+    .contact-info > * {
+        display: block !important;
+        float: none !important;
+        clear: both !important;
+    }
+
+    /* Remove any residual spacing */
+    .contact-info br {
+        display: none !important;
+    }
+
+    /* Ensure consistent spacing after contact info */
+    .contact-info::after {
+        content: '';
+        display: block;
+        height: 15px; /* Adjust as needed */
+    }
+
+    section {
+        page-break-inside: avoid;
+        margin-bottom: 20px;
+        border: none;
+    }
+
+    h2 {
+        font-size: 18pt;
+        color: #000;
+        border-bottom: 1px solid #000;
+        padding-bottom: 5px;
+    }
+
+    .two-column-list, .skills-grid {
+        column-count: 2;
+        column-gap: 20px;
+    }
+
+    .job {
+        margin-bottom: 15px;
+    }
+
+    .job-title {
+        font-weight: bold;
+    }
+
+    .job-company {
+        font-style: italic;
+    }
+
+    .technologies {
+        font-size: 10pt;
+    }
+
+    .dark-mode-toggle, #downloadResume, .download-resume-btn {
+        display: none !important;
+    }
+
+    * {
+        animation: none !important;
+        transition: none !important;
+        color: #000 !important;
+        opacity: 1 !important;
+    }
+
+    .aos-animate {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    body::before {
+        display: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+    }
+
+    img, svg {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 2cm;
+    }
+}

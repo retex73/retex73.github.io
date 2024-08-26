@@ -97,7 +97,6 @@ body::before {
     color: rgba(255, 255, 255, 0.05);
 }
 
-
 /* Header Styles */
 header {
     background: linear-gradient(-45deg, #3498db, #2980b9, #1abc9c, #16a085);
@@ -143,13 +142,36 @@ header::before {
     }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+
 header h1 {
-    margin: 0;
-    font-size: 3.5em;
+    font-family: 'Roboto Mono', monospace;
     font-weight: 700;
-    letter-spacing: -2px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    animation: fadeInDown 1s ease-out;
+    font-size: 3.5rem;
+    letter-spacing: -0.03em;
+    color: var(--header-text);
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0.5em;
+    border-bottom: 3px solid var(--highlight-color);
+    padding-bottom: 0.1em;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3rem;
+    }
+    header h1::after {
+        font-size: 0.3em;
+        right: -1.5em;
+    }
 }
 
 header .subtitle {
@@ -167,10 +189,15 @@ header .contact-info {
     animation: fadeInUp 1s ease-out 1s both;
 }
 
-header .contact-info p {
+header .contact-info p,
+header .contact-info a {
     margin: 5px 20px 5px 0;
     display: flex;
     align-items: center;
+    color: var(--header-text);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
 header .contact-info svg {
@@ -178,14 +205,8 @@ header .contact-info svg {
     color: var(--header-text);
 }
 
-header .contact-info a {
-    color: var(--header-text);
-    text-decoration: none;
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-header .contact-info a::before {
+header .contact-info a::before,
+header .contact-info p::before {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -198,11 +219,13 @@ header .contact-info a::before {
     transition: transform 0.3s ease;
 }
 
-header .contact-info a:hover {
+header .contact-info a:hover,
+header .contact-info p:hover {
     color: var(--header-highlight-color);
 }
 
-header .contact-info a:hover::before {
+header .contact-info a:hover::before,
+header .contact-info p:hover::before {
     transform: scaleX(1);
     transform-origin: left;
 }
@@ -362,4 +385,47 @@ a:hover {
     .skills-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Download Resume Button Styles */
+.download-resume-btn {
+    background-color: var(--highlight-color);
+    color: var(--section-bg);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.download-resume-btn:hover {
+    background-color: var(--header-highlight-color);
+    transform: translateY(-2px);
+}
+
+.download-resume-btn:active {
+    transform: translateY(0);
+}
+
+.download-resume-btn svg {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Dark mode adjustments for download button */
+.dark-mode .download-resume-btn {
+    background-color: var(--header-highlight-color);
+    color: var(--bg-color);
+}
+
+.dark-mode .download-resume-btn:hover {
+    background-color: var(--highlight-color);
 }
