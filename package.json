@@ -1,0 +1,20 @@
+{
+  "name": "peter-williams-resume",
+  "version": "1.0.0",
+  "description": "Peter Williams' online resume",
+  "scripts": {
+    "test": "jest",
+    "test:e2e": "npx cypress open"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.7",
+    "@eslint/js": "^9.15.0",
+    "axe-core": "^4.10.3",
+    "cypress": "^13.14.1",
+    "cypress-axe": "^1.6.0",
+    "eslint": "^9.15.0",
+    "eslint-plugin-cypress": "^4.2.0",
+    "globals": "^15.12.0",
+    "jest": "^27.0.6"
+  }
+}
