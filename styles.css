@@ -5,8 +5,9 @@
     --header-text: #fff;
     --section-bg: #fff;
     --border-color: #e0e0e0;
-    --highlight-color: #ff6b6b;
+    --highlight-color: #8B0000;
     --header-highlight-color: #ffd166;
+    --highlight-color-rgb: 139, 0, 0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,94 +20,105 @@
         --border-color: #444;
         --highlight-color: #ffd166;
         --header-highlight-color: #ff9f1c;
+        --highlight-color-rgb: 255, 209, 102;
     }
 }
 
-.dark-mode {
+/* Apply dark mode styles directly to html element */
+html.dark-mode {
     --bg-color: #121212;
-    --text-color: #E0E0E0;
+    --text-color: #FCFCFC;
     --header-bg: #0A84FF;
     --header-text: #FFFFFF;
     --section-bg: #1E1E1E;
-    --border-color: #333333;
-    --highlight-color: #ffd166;
+    --border-color: #555;
+    --highlight-color: #FFE4A1;
     --header-highlight-color: #ff9f1c;
+    --highlight-color-rgb: 255, 228, 161;
+    --subtle-text-color: #BEBEBE;
+
+    /* Ensure body background also updates if needed */
+    /* Typically unnecessary if body bg is transparent or uses vars */
+    /* body { background-color: var(--bg-color); } */
+
+    /* === Explicit Color Settings for Dark Mode === */
+    p,
+    li,
+    .project-description {
+        color: var(--text-color);
+    }
+    h2,
+    h3,
+    .project-card h3 {
+        color: var(--highlight-color);
+    }
+    strong {
+        color: var(--text-color);
+    }
+    #core-competencies li {
+        color: var(--text-color);
+        background-color: rgba(var(--highlight-color-rgb, 255, 228, 161), 0.15);
+    }
+    .skill-tag {
+        color: var(--text-color);
+        background-color: rgba(var(--highlight-color-rgb, 255, 228, 161), 0.25);
+    }
+    .job-company,
+    .job-date,
+    .technologies {
+        color: var(--subtle-text-color);
+        opacity: 1;
+    }
+    header .download-resume-btn {
+        color: #333 !important;
+        background-color: var(--header-highlight-color);
+    }
+    header .download-resume-btn:hover {
+        color: #000 !important;
+        background-color: #e68f0c;
+    }
+    /* Force section background in dark mode */
+    .section {
+        background-color: var(--section-bg);
+    }
+    /* ========================================== */
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--text-color);
     margin: 0;
-    padding: 20px;
-    transition: background-color 0.3s, color 0.3s;
+    padding: 40px 20px;
+    transition: background-color 0.4s ease, color 0.4s ease;
     background-color: var(--bg-color);
-    background-image:
-        linear-gradient(60deg, rgba(52, 152, 219, 0.1) 25%, transparent 25%, transparent 75%, rgba(52, 152, 219, 0.1) 75%, rgba(52, 152, 219, 0.1)),
-        linear-gradient(120deg, rgba(46, 204, 113, 0.1) 25%, transparent 25%, transparent 75%, rgba(46, 204, 113, 0.1) 75%, rgba(46, 204, 113, 0.1));
-    background-size: 60px 60px;
-    background-position: 0 0, 30px 30px;
     position: relative;
     overflow-x: hidden;
 }
 
-body::before {
-    content: '<div>\A{\A    display: flex;\A    justify-content: center;\A    align-items: center;\A}\A</div>';
-    position: fixed;
-    top: 0;
-    left: -5%;
-    width: 110%;
-    height: 100%;
-    white-space: pre;
-    font-family: 'Courier New', monospace;
-    font-size: 14px;
-    line-height: 1.6;
-    color: rgba(52, 152, 219, 0.1);
-    pointer-events: none;
-    animation: scrollCode 120s linear infinite;
-}
-
-@keyframes scrollCode {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-50%);
-    }
-}
-
 .container {
-    max-width: 900px;
+    max-width: 950px;
     margin: 0 auto;
     background-color: var(--section-bg);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
     overflow: hidden;
     position: relative;
     z-index: 1;
-}
-
-/* Dark mode adjustments */
-.dark-mode body {
-    background-image:
-        linear-gradient(60deg, rgba(52, 152, 219, 0.05) 25%, transparent 25%, transparent 75%, rgba(52, 152, 219, 0.05) 75%, rgba(52, 152, 219, 0.05)),
-        linear-gradient(120deg, rgba(46, 204, 113, 0.05) 25%, transparent 25%, transparent 75%, rgba(46, 204, 113, 0.05) 75%, rgba(46, 204, 113, 0.05));
-}
-
-.dark-mode body::before {
-    color: rgba(255, 255, 255, 0.05);
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 /* Header Styles */
 header {
     background: linear-gradient(-45deg, #3498db, #2980b9, #1abc9c, #16a085);
     background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    animation: gradientBG 18s ease infinite;
     color: var(--header-text);
     text-align: left;
-    padding: 40px 20px;
+    padding: 50px 40px;
     position: relative;
     overflow: hidden;
+    border-bottom: 5px solid var(--header-highlight-color);
 }
 
 @keyframes gradientBG {
@@ -147,20 +159,21 @@ header::before {
 header h1 {
     font-family: 'Roboto Mono', monospace;
     font-weight: 700;
-    font-size: 3.5rem;
+    font-size: 3.8rem;
     letter-spacing: -0.03em;
     color: var(--header-text);
-    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.15);
     position: relative;
     display: inline-block;
-    margin-bottom: 0.5em;
-    border-bottom: 3px solid var(--highlight-color);
-    padding-bottom: 0.1em;
+    margin-bottom: 0.4em;
+    border-bottom: 4px solid var(--header-highlight-color);
+    padding-bottom: 0.2em;
+    transition: color 0.3s ease;
 }
 
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
 }
 
@@ -175,29 +188,32 @@ header h1 {
 }
 
 header .subtitle {
-    font-size: 1.2em;
-    margin-top: 10px;
+    font-size: 1.3em;
+    margin-top: 15px;
     opacity: 0.9;
     animation: fadeInUp 1s ease-out 0.5s both;
+    font-weight: 300;
 }
 
 header .contact-info {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin-top: 20px;
+    margin-top: 25px;
+    gap: 25px;
     animation: fadeInUp 1s ease-out 1s both;
 }
 
 header .contact-info p,
 header .contact-info a {
-    margin: 5px 20px 5px 0;
+    margin: 0;
     display: flex;
     align-items: center;
     color: var(--header-text);
     text-decoration: none;
     position: relative;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 0.95rem;
 }
 
 header .contact-info svg {
@@ -205,29 +221,10 @@ header .contact-info svg {
     color: var(--header-text);
 }
 
-header .contact-info a::before,
-header .contact-info p::before {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--header-highlight-color);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-}
-
 header .contact-info a:hover,
 header .contact-info p:hover {
     color: var(--header-highlight-color);
-}
-
-header .contact-info a:hover::before,
-header .contact-info p:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
+    transform: translateY(-2px);
 }
 
 @keyframes fadeInDown {
@@ -254,19 +251,36 @@ header .contact-info p:hover::before {
 
 /* Section Styles */
 section {
-    padding: 30px;
+    padding: 40px;
     border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.4s ease;
+}
+section:last-child {
+    border-bottom: none;
 }
 
 h2 {
+    font-size: 1.8rem;
     color: var(--highlight-color);
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    position: relative;
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    gap: 10px;
 }
 
 h2 svg {
-    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
 }
 
 /* List Styles */
@@ -288,146 +302,273 @@ h2 svg {
 }
 
 #core-competencies ul {
-    list-style-type: none;
-    padding-left: 20px;
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
 }
 
 #core-competencies li {
+    background-color: rgba(var(--highlight-color-rgb, 139, 0, 0), 0.1);
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
     display: flex;
     align-items: center;
+    gap: 8px;
 }
 
-#core-competencies li::before {
-    content: "";
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    margin-right: 0.5em;
+#core-competencies li:hover {
+    transform: translateY(-3px);
+    background-color: rgba(var(--highlight-color-rgb, 139, 0, 0), 0.2);
 }
 
 /* Skills Grid */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.skill-category {
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
 }
 
 .skill-category h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
     color: var(--highlight-color);
-    margin-bottom: 10px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.skill-category p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Style individual skills as tags */
+.skill-tag {
+    display: inline-block;
+    background-color: rgba(var(--highlight-color-rgb, 139, 0, 0), 0.1);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.skill-tag:hover {
+    background-color: rgba(var(--highlight-color-rgb, 139, 0, 0), 0.2);
+    transform: scale(1.05);
 }
 
 /* Job Styles */
 .job {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+    padding-left: 20px;
+    border-left: 3px solid var(--highlight-color);
+    position: relative;
+}
+
+.job::before {
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: var(--highlight-color);
+    border-radius: 50%;
+    border: 3px solid var(--section-bg);
 }
 
 .job-title {
-    font-weight: bold;
-    color: var(--text-color);
+    font-size: 1.4rem;
+    font-weight: 700;
     margin-bottom: 5px;
 }
 
 .job-company {
-    font-weight: bold;
-    color: var(--highlight-color);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 5px;
 }
 
 .job-date {
-    font-style: italic;
+    font-size: 0.9rem;
     color: var(--text-color);
     opacity: 0.7;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-.technologies {
-    font-size: 0.9em;
-    color: var(--text-color);
-    opacity: 0.7;
+.job ul {
+    padding-left: 20px;
     margin-top: 10px;
 }
 
-/* Dark Mode Toggle */
-.dark-mode-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: var(--section-bg);
-    color: var(--text-color);
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+.job li {
+    margin-bottom: 8px;
+    line-height: 1.6;
 }
 
-.dark-mode-toggle:hover {
-    background-color: var(--highlight-color);
-    color: #000;
+.technologies {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--text-color);
+    opacity: 0.8;
+    background-color: rgba(var(--highlight-color-rgb, 217, 83, 79), 0.08);
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
 }
 
 /* General Link Styles */
 a {
     color: var(--highlight-color);
     text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 a:hover {
-    text-decoration: none;
+    color: var(--text-color);
+    text-decoration: underline;
 }
 
 /* Media Queries */
-@media (max-width: 600px) {
-    .two-column-list {
-        column-count: 1;
-    }
+@media (max-width: 768px) {
+    body { padding: 20px 10px; }
+    .container { border-radius: 8px; }
+    header { padding: 40px 20px; }
+    header h1 { font-size: 2.8rem; }
+    header .subtitle { font-size: 1.1rem; }
+    header .contact-info { gap: 15px; }
+    section { padding: 30px 20px; }
+    h2 { font-size: 1.6rem; margin-bottom: 20px; }
+    .skills-grid { grid-template-columns: 1fr; gap: 15px; }
+    .job { padding-left: 15px; border-left-width: 2px; }
+    .job::before { left: -8px; width: 13px; height: 13px; border-width: 2px; }
+}
 
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 480px) {
+    header h1 { font-size: 2.2rem; }
+    header .subtitle { font-size: 1rem; }
+    header .contact-info { flex-direction: column; align-items: flex-start; gap: 10px; }
+    h2 { font-size: 1.4rem; }
+    #core-competencies ul { grid-template-columns: 1fr; }
 }
 
 /* Download Resume Button Styles */
 .download-resume-btn {
-    background-color: var(--highlight-color);
-    color: var(--section-bg);
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    border-radius: 4px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--highlight-color);
+    color: var(--header-text);
+    transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    margin-top: 20px;
+    gap: 8px;
+    font-weight: 500;
 }
 
+.dark-mode-toggle,
+.download-resume-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Add transition styles for the icon swap */
+.dark-mode-toggle {
+    position: relative; /* Needed for absolute positioning of icons */
+    overflow: hidden; /* Hide the icon moving out */
+}
+
+.dark-mode-toggle i {
+    display: block; /* Ensure icons take up space */
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.dark-mode-toggle i[data-feather="sun"] {
+    position: absolute; /* Position sun on top of moon initially */
+    top: 10px; /* Center vertically (adjust based on padding) */
+    left: 10px; /* Center horizontally (adjust based on padding) */
+    transform: translateY(100%) scale(0.8); /* Start below and smaller */
+    opacity: 0;
+}
+
+.dark-mode-toggle i[data-feather="moon"] {
+     transform: translateY(0) scale(1); /* Start visible */
+     opacity: 1;
+}
+
+/* When dark mode is active */
+.dark-mode-toggle.dark-mode-active i[data-feather="sun"] {
+    transform: translateY(0) scale(1); /* Sun moves in */
+    opacity: 1;
+}
+
+.dark-mode-toggle.dark-mode-active i[data-feather="moon"] {
+    transform: translateY(-100%) scale(0.8); /* Moon moves up and out */
+    opacity: 0;
+}
+
+.dark-mode-toggle:hover,
 .download-resume-btn:hover {
-    background-color: var(--header-highlight-color);
+    background-color: #e65c5c;
     transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
+html.dark-mode .dark-mode-toggle:hover,
+html.dark-mode .download-resume-btn:hover {
+    background-color: #e6b85c;
+}
+
+.dark-mode-toggle:active,
 .download-resume-btn:active {
-    transform: translateY(0);
+    transform: translateY(0px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
+.dark-mode-toggle svg,
 .download-resume-btn svg {
-    margin-right: 8px;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
 }
 
-/* Dark mode adjustments for download button */
-.dark-mode .download-resume-btn {
+/* Specific Download Button Styling in Header */
+header .download-resume-btn {
+    margin-top: 20px;
     background-color: var(--header-highlight-color);
-    color: var(--bg-color);
+    color: #000;
 }
 
-.dark-mode .download-resume-btn:hover {
-    background-color: var(--highlight-color);
+header .download-resume-btn:hover {
+    background-color: #f2c45a;
+    color: #000;
 }
 
 /* Copy Animation Styles */
@@ -438,20 +579,78 @@ a:hover {
 
 .copy-message {
     position: absolute;
-    top: 100%;
+    bottom: 110%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
+    background-color: #333;
+    color: #fff;
     padding: 5px 10px;
     border-radius: 4px;
-    font-size: 14px;
-    opacity: 0;
-    pointer-events: none;
+    font-size: 0.8em;
+    white-space: nowrap;
+    opacity: 0; /* Let GSAP handle initial state and transitions */
+    transition: opacity 0.3s ease; /* Keep opacity transition for fade out if needed */
+    z-index: 100;
 }
 
-/* Dark mode adjustments for copy message */
-.dark-mode .copy-message {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: var(--bg-color);
+html.dark-mode .copy-message {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Project Card Styles */
+.project-card {
+    background-color: var(--bg-color); /* Use body bg for contrast */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--highlight-color);
+    font-size: 1.3rem;
+}
+
+.project-description {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.project-tech {
+    margin-bottom: 15px;
+}
+
+.project-tech strong {
+    margin-right: 8px;
+}
+
+.project-tech .skill-tag {
+    /* Inherit skill-tag styles, maybe slightly smaller? */
+    font-size: 0.8rem;
+    padding: 4px 8px;
+}
+
+.project-links a {
+    display: inline-block;
+    margin-right: 15px;
+    color: var(--highlight-color);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 2px solid transparent; /* For hover effect */
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.project-links a:hover {
+    color: var(--text-color);
+    border-bottom-color: var(--highlight-color);
+    text-decoration: none; /* Override general link hover */
 }

@@ -4,10 +4,10 @@ describe("Dark Mode Toggle", () => {
   });
 
   it("should toggle dark mode when button is clicked", () => {
-    cy.get("body").should("not.have.class", "dark-mode");
+    cy.get("html").should("not.have.class", "dark-mode");
     cy.get(".dark-mode-toggle").click();
-    cy.get("body").should("have.class", "dark-mode");
+    cy.get("html").should("have.class", "dark-mode");
     cy.get(".dark-mode-toggle").click();
-    cy.get("body").should("not.have.class", "dark-mode");
+    cy.get("html").should("not.have.class", "dark-mode");
   });
 });
