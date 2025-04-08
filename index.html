@@ -22,27 +22,27 @@
     </script>
 </head>
 <body>
-    <!-- Header is implicitly a landmark due to being child of body -->
-    <header data-aos="fade-down" data-aos-duration="1000">
-        <h1>Peter Williams</h1>
-        <p class="subtitle">Senior JavaScript Developer & Technical Lead</p>
-        <div class="contact-info">
-            <a href="mailto:retex.williams@gmail.com" id="email-link">retex.williams@gmail.com</a>
-            <a href="tel:07957791854" id="phone-link">07957 791854</a>
-            <p>Manchester, UK</p>
-        </div>
-        <button class="download-resume-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            Download Resume
-        </button>
-    </header>
-
     <main>
         <div class="container">
+            <!-- Header moved inside container -->
+            <header data-aos="fade-down" data-aos-duration="1000">
+                <h1>Peter Williams</h1>
+                <p class="subtitle">Senior JavaScript Developer & Technical Lead</p>
+                <div class="contact-info">
+                    <a href="mailto:retex.williams@gmail.com" id="email-link">retex.williams@gmail.com</a>
+                    <a href="tel:07957791854" id="phone-link">07957 791854</a>
+                    <p>Manchester, UK</p>
+                </div>
+                <button class="download-resume-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download Resume
+                </button>
+            </header>
+
             <!-- Header moved outside container, and container wrapped in main -->
             <section id="professional-summary" class="section" data-aos="fade-up" data-aos-duration="800">
                 <h2>Professional Summary</h2>
@@ -93,7 +93,7 @@
 
             <section id="professional-experience" class="section" data-aos="fade-up" data-aos-duration="800">
                 <h2>Professional Experience</h2>
-                <div class="job" data-aos="fade-left" data-aos-delay="100">
+                <article class="job" data-aos="fade-left" data-aos-delay="100">
                     <h3 class="job-title">JavaScript Technical Lead</h3>
                     <p class="job-company">Cintra</p>
                     <p class="job-date">September 2022 - May 2023</p>
@@ -103,8 +103,8 @@
                         <li>Collaborated with stakeholders to prioritize features, ensuring all project milestones were met on time and within scope.</li>
                     </ul>
                     <p class="technologies">Technologies: React, Node.js, AWS (Cognito, Amplify, DynamoDB), Java</p>
-                </div>
-                <div class="job" data-aos="fade-left" data-aos-delay="200">
+                </article>
+                <article class="job" data-aos="fade-left" data-aos-delay="200">
                     <h3 class="job-title">Senior JavaScript Engineer</h3>
                     <p class="job-company">Booking.com</p>
                     <p class="job-date">September 2021 - September 2022</p>
@@ -114,7 +114,7 @@
                         <li>Enhanced security through the implementation of JWT authentication and AWS secrets management, significantly fortifying the application.</li>
                     </ul>
                     <p class="technologies">Technologies: React, Node.js, TypeScript, PHP, AWS, GitLab CI/CD</p>
-                </div>
+                </article>
             </section>
 
             <section id="certifications" class="section" data-aos="fade-up" data-aos-duration="800">
@@ -127,7 +127,7 @@
 
             <section id="personal-projects" class="section" data-aos="fade-up" data-aos-duration="800">
                 <h2>Personal Projects</h2>
-                <div class="project-card">
+                <article class="project-card">
                     <h3>AI-Powered Alexa Skill for Healthcare Accessibility</h3>
                     <p class="project-description">Developed an Alexa skill to assist elderly and disabled individuals in booking medical appointments and accessing various services.</p>
                     <div class="project-tech">
@@ -141,7 +141,7 @@
                         <!-- <a href="#" target="_blank" class="project-link">View Demo</a> -->
                         <!-- <a href="#" target="_blank" class="project-link">Source Code</a> -->
                     </div>
-                </div>
+                </article>
                 <!-- Add more project-card divs for other projects -->
             </section>
 
